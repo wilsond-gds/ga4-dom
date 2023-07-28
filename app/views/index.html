@@ -6,124 +6,22 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Page interaction using the Document Object Model</h1>
-
-        {% set randomNumber = [0,1,2,3,4,5,6,7,8] | random %}
-        {% if randomNumber > 4 %}
-        {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-
-        {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-        {
-        text: "Enter your full name",
-        href: "#"
-        },
-        {
-        text: "The date your passport was issued must be in the past",
-        href: "#"
-        }
-        ]
-        }) }}
-        {% endif %}
-
-
-
-        {% set randomNumber = [0,1,2,3,4,5,6,7,8] | random %}
-        {% if randomNumber > -1 %}
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-        {{ govukDateInput({
-        fieldset: {
-        legend: {
-        text: "When was your passport issued?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
-        }
-        },
-        hint: {
-        text: "For example, 27 3 2007"
-        },
-        errorMessage: {
-        text: "The date your passport was issued must be in the past"
-        },
-        id: "passport-issued",
-        namePrefix: "passport-issued",
-        items: [
-        {
-        classes: "govuk-input--width-2 govuk-input--error",
-        name: "day",
-        value: "6"
-        },
-        {
-        classes: "govuk-input--width-2 govuk-input--error",
-        name: "month",
-        value: "3"
-        },
-        {
-        classes: "govuk-input--width-4 govuk-input--error",
-        name: "year",
-        value: "2076"
-        }
-        ]
-        }) }}
-        {% endif %}
-
-        <p class="govuk-body">This article contextualises, defines, and operationalises the concept of platformisation. <a href="#" class="govuk-link" data-ga4='{"key1":"key-1-value","key2":"key-2-value","key3":"key-3-value"}'>Drawing insights from different scholarly perspectives</a> on platforms – software studies, critical political economy, business studies, and cultural studies – it develops a comprehensive approach to this process.</p>
-
-        {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-        {{ govukDetails({
-        summaryText: "Help with nationality",
-        text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.",
-        attributes: { "data-ga4-info":'{"key1":"key-1-value","key2":"key-2-value","key3":"key-3-value"}' }
-        }) }}
-        
-        <p class="govuk-body govuk-!-margin-bottom-9">Platformisation is defined as the penetration of infrastructures, economic processes and governmental frameworks of digital platforms in different economic sectors and spheres of life, as well as the reorganisation of cultural practices and imaginations around these platforms. <a href="#" class="govuk-link" rel="noreferrer noopener" data-ga4='{"key1":"key-1-value","key2":"key-2-value","key3":"key-3-value"}' target="_blank">Using app stores as an example, we show how this definition can be employed in research</a>.
-        </p>
-
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-        name: "where-do-you-live",
-        fieldset: {
-        legend: {
-        text: "Where do you live?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-        }
-        },
-        items: [
-        {
-        value: "england",
-        text: "England"
-        },
-        {
-        value: "scotland",
-        text: "Scotland"
-        },
-        {
-        value: "wales",
-        text: "Wales"
-        },
-        {
-        value: "northern-ireland",
-        text: "Northern Ireland"
-        }
-        ]
-        }) }}
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-        text: "Save and continue"
-        }) }}
-
+        <h1 class="govuk-heading-xl">GA4 prototypes</h1>
+        <div class="app-prose-scope">
+         <ul class="govuk-list">
+             <li><p><a href="dcmaw.html">DCMAW page view push prototype</a></p><p>An implementation of the DCMAW code on a sample page</p></li>
+             <li><p><a href="explore.html">addEventListener to HTML elements</a></p><p>Very basic JavaScript to capture clicks on relevant events as listed in the confluence document</p></li>
+             <li><p><a href="https://docs.publishing.service.gov.uk/analytics/">GOV.UK Google Analytics 4 implementation record</a></p><p>This site contains a record of the data implementation for Google Analytics 4 (GA4) on GOV.UK Publishing. It was built to aid developers on GOV.UK Publishing but is available to anyone who may find our approach useful.</p></li>
+         </ul>
+        </div>
     </div>
-<!--    <div class="govuk-grid-column-one-third">-->
-<!--        {% include "govuk-prototype-kit/includes/homepage-top.njk" %}-->
-<!--    </div>-->
+
 </div>
 
 {% endblock %}
 
+{% block scripts %}
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

@@ -46,3 +46,25 @@
 
 
 }
+
+code {
+  font-family: 'andale mono', monospace;
+  font-size: 1.12rem;
+  color: rebeccapurple;
+}
+
+.cookie-information {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: inline-block;
+  background: white;
+  padding: 0.6rem 1.4rem;
+  border:1px solid govuk-colour("mid-grey");
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  border-radius: 0.2rem;
+  color: #333;
+  min-width: 20ch;
+}
+.cookie-information.clear {color: $govuk-error-colour;}
+.cookie-information.view {color: $govuk-brand-colour; top: 4rem;}

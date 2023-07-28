@@ -1,12 +1,15 @@
 {
   "scripts": {
-    "dev": "govuk-prototype-kit dev",
+    "dev": "npm run build-js && govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start"
+    "start": "govuk-prototype-kit start",
+    "build-js": " mkdir -p app/assets/javascripts/processed; uglifyjs node_modules/govuk-frontend/govuk/all.js node_modules/hmpo-components/all.js app/assets/javascripts/dcmaw/**/*.js -o app/assets/javascripts/processed/dcmaw.js"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "^1.2.1",
     "govuk-frontend": "^4.7.0",
-    "govuk-prototype-kit": "^13.11.0"
+    "govuk-prototype-kit": "^13.11.0",
+    "hmpo-components": "^6.3.0",
+    "uglify-js": "^3.17.4"
   }
 }

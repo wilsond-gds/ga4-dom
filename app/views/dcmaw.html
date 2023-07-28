@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+{% set pageName="DCMAW page push code" %}
+
+{# DCMAW accounts · UA GTM-TK92W68 · GA4 GTM-KD86CMZ #}
+{% set GAcode %}
+window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localhost', isGa4Enabled: 'false', ga4ContainerId: 'GTM-KD86CMZ'})
+{% endset %}
+
+{% block bodyStart %}
+{% include "layouts/cookie-banner" %}
+{% endblock %}
+
+{% block content %}
+                <p><code>ga-data-element</code> <span id="ga-data-element">Testing</span></p>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Listen for a page view</h1>
+
+        <p>This page has a cookie banner.</p>
+
+        <p>In the call to <code>window.DI.appInit()</code> the following information is passed in:
+        </p>
+        <p>
+        <code>{{ GAcode }}</code> </p>
+
+        <p>I’ve used the cookie banner from DCMAW as a nunjucks include: it’s not exactly the same as <a href="https://design-system.service.gov.uk/components/cookie-banner/">the cookie banner code in the Design System</a>.</p>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/ga-ui.js"></script>
+<script src="/public/javascripts/processed/dcmaw.js"></script>
+<script type="text/javascript">{{ GAcode | safe }}</script>
+{% endblock %}
