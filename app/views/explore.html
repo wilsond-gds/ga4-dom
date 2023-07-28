@@ -127,7 +127,14 @@
 
 {% endblock %}
 
-
+{% block scripts %}
+{# the location of the nunjucks files that inject JavaScript into a prototype kit page #}
+{# node_modules/govuk-prototype-kit/lib/nunjucks/govuk-prototype-kit/includes/scripts.njk #}
+{# include "govuk-prototype-kit/includes/scripts.njk" #}
 {% block pageScripts %}
+<script src="/plugin-assets/govuk-prototype-kit/lib/assets/javascripts/kit.js"></script>
 <script src="/public/javascripts/exploreEventListener/eventListener.js"></script>
 {% endblock %}
+{% endblock %}
+
+

@@ -2,7 +2,7 @@
 
 (function () {
     const addButton = document.querySelector('body');
-    addButton.insertAdjacentHTML('afterbegin', '<a href="#" class="cookie-information clear">clear cookies</a>');
+    addButton.insertAdjacentHTML('afterbegin', '<a href="#" class="cookie-information clear">🍪 clear cookies</a>');
     const monitorButton = document.querySelector('.cookie-information.clear');
     monitorButton.addEventListener('click', (event) => {
         event.preventDefault();
@@ -16,7 +16,7 @@
 
     })
 
-    addButton.insertAdjacentHTML('afterbegin', '<a href="#" class="cookie-information view">view cookies in console</a>');
+    addButton.insertAdjacentHTML('afterbegin', '<a href="#" class="cookie-information view">🍪 view cookies in console</a>');
     const monitorViewButton = document.querySelector('.cookie-information.view');
     monitorViewButton.addEventListener('click', (event) => {
         event.preventDefault();
@@ -27,6 +27,7 @@
 
 // write a message to the console when elements are added to the head
 
+(function () {
 // Select the node that will be observed for mutations
 const targetNode = document.querySelector("head");
 
@@ -50,3 +51,4 @@ const observer = new MutationObserver(callback);
 
 // Start observing the target node for configured mutations
 observer.observe(targetNode, config);
+})();

@@ -7,10 +7,11 @@ window.DI.analyticsGa4.analyticsModules = window.DI.analyticsGa4.analyticsModule
 (function (analyticsModules) {
 
   'use strict'
-
+           console.log('setting up page tracking');
   let PageViewTracker = {
 
     init: function() {
+      console.log('page tracking sending');
       const data = {
         event: 'page_view',
         page_view: {

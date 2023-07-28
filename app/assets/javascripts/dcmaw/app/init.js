@@ -1,7 +1,7 @@
 /* global window document */
 
 window.DI = window.DI || {};
-window.GOVUKFrontend.initAll()
+//window.GOVUKFrontend.initAll()
 window.onload = function () {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

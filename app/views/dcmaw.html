@@ -3,7 +3,7 @@
 
 {# DCMAW accounts · UA GTM-TK92W68 · GA4 GTM-KD86CMZ #}
 {% set GAcode %}
-window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localhost', isGa4Enabled: 'false', ga4ContainerId: 'GTM-KD86CMZ'})
+window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localhost', isGa4Enabled: 'true', ga4ContainerId: 'GTM-KD86CMZ'})
 {% endset %}
 
 {% block bodyStart %}
@@ -11,12 +11,11 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 {% endblock %}
 
 {% block content %}
-                <p><code>ga-data-element</code> <span id="ga-data-element">Testing</span></p>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Listen for a page view</h1>
 
-        <p>This page has a cookie banner.</p>
+        <p>This page has a cookie banner: clear cookies to see it.</p>
 
         <p>In the call to <code>window.DI.appInit()</code> the following information is passed in:
         </p>
@@ -25,14 +24,40 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 
         <p>I’ve used the cookie banner from DCMAW as a nunjucks include: it’s not exactly the same as <a href="https://design-system.service.gov.uk/components/cookie-banner/">the cookie banner code in the Design System</a>.</p>
 
+        <h2 class="govuk-heading-m">Scripts being called by this page</h2>
+        <p>View source to see the script tags: currently these are being added to the page one-by-one instead of being concatenated.</p>
+
+        <h2 class="govuk-heading-m">Script documentation</h2>
+        <p>View source to see the script tags: currently these are being added to the page one-by-one instead of being concatenated.</p>
+
+        <p><a href="https://docs.google.com/document/d/1NBoWzigm7sAfiPXEtee2faQ2qPS388KfYNWDLZxXII4/edit?usp=sharing">I’ve tried to describe what each file is doing in this Google document</a>.</p>
+
     </div>
 
 </div>
 
 {% endblock %}
 
+{% block scripts %}
+{# the location of the nunjucks files that inject JavaScript into a prototype kit page #}
+{# node_modules/govuk-prototype-kit/lib/nunjucks/govuk-prototype-kit/includes/scripts.njk #}
+{# include "govuk-prototype-kit/includes/scripts.njk" #}
 {% block pageScripts %}
 <script src="/public/javascripts/ga-ui.js"></script>
-<script src="/public/javascripts/processed/dcmaw.js"></script>
+<!--<script src="/public/javascripts/processed/dcmaw.js"></script>-->
+
+
+<!--<script src="/public/javascripts/dcmaw/cookiesjs/cookies.js"></script>-->
+<script src="/public/javascripts/dcmaw/analytics/cookieBanner.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/cookies.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/core.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/loadAnalytics.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/ua/init.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/ga4/init.js"></script>
+<script src="/public/javascripts/dcmaw/analytics/ga4/pageViewTracker.js"></script>
+
+<script src="/public/javascripts/dcmaw/app/init.js"></script>
+
 <script type="text/javascript">{{ GAcode | safe }}</script>
+{% endblock %}
 {% endblock %}

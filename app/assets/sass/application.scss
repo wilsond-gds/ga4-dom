@@ -65,6 +65,9 @@ code {
   border-radius: 0.2rem;
   color: #333;
   min-width: 20ch;
+  text-decoration: none;
 }
 .cookie-information.clear {color: $govuk-error-colour;}
 .cookie-information.view {color: $govuk-brand-colour; top: 4rem;}
+
+a.cookie-information:hover {background-color: $govuk-focus-colour; color: $govuk-focus-text-colour;}
