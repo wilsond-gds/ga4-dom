@@ -2,6 +2,13 @@
 
 window.DI = window.DI || {};
 //window.GOVUKFrontend.initAll()
+
+const visualLog = (content) => {
+  console.log(content);
+}
+
+window.visualLog = visualLog;
+
 window.onload = function () {
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(

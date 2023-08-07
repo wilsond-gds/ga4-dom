@@ -14,6 +14,8 @@ window.DI.analyticsGa4 = window.DI.analyticsGa4 || {};
     if (consentGiven) {
       window.DI.core.load(window.DI.analytics.vars.ga4ContainerId)
       const analyticsModules = window.DI.analyticsGa4.analyticsModules
+      console.log('all Analytics Modules: '+ JSON.stringify(analyticsModules));
+
       for (const module in analyticsModules) {
         if (Object.prototype.hasOwnProperty.call(analyticsModules, module)) {
           const tracker = analyticsModules[module]
