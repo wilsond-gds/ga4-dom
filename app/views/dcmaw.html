@@ -34,21 +34,21 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 
         <p><a href="https://docs.google.com/document/d/1NBoWzigm7sAfiPXEtee2faQ2qPS388KfYNWDLZxXII4/edit?usp=sharing">I’ve tried to describe what each file is doing in this Google document</a>.</p>
 
-        <h2 class="govuk-heading-m">Testing that the Design System code is working</h2>
+        <h2 class="govuk-heading-m">Test Design System Component</h2>
 
         {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
         {{ govukCharacterCount({
         name: "with-hint",
         id: "with-hint",
-        maxlength: 200,
+        maxlength: 100,
         label: {
-        text: "Can you provide more detail?",
+        text: "The character count should change when you type in this box",
         classes: "govuk-label--s",
-        isPageHeading: true
+        isPageHeading: false
         },
         hint: {
-        text: "Do not include personal or financial information like your National Insurance number or credit card details."
+        text: "Proving Design System JavaScript is available"
         }
         }) }}
 
@@ -66,18 +66,21 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 {% block pageScripts %}
 <!-- Test code to watch what’s happening in the DOM and delete cookies -->
 <script src="/public/javascripts/ga-ui.js"></script>
-
-<!--<script src="/public/javascripts/processed/dcmaw.js"></script>-->
+<!-- This script has been completely deleted -->
 <!--<script src="/public/javascripts/dcmaw/cookiesjs/cookies.js"></script>-->
-<script src="/public/javascripts/dcmaw/analytics/cookieBanner.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/cookies.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/core.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/loadAnalytics.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/ua/init.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/ga4/init.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/ga4/pageViewTracker.js"></script>
-<script src="/public/javascripts/dcmaw/analytics/ga4/pageLinkClickTracker.js"></script>
-<script src="/public/javascripts/dcmaw/app/init.js"></script>
+
+<!--This script replaces all the scripts below-->
+<script src="/public/javascripts/processed/analytics.js"></script>
+
+<!--<script src="/public/javascripts/dcmaw/analytics/ga4/init.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/ga4/pageLinkClickTracker.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/ga4/pageViewTracker.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/ua/init.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/cookieBanner.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/cookies.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/core.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/analytics/loadAnalytics.js"></script>-->
+<!--<script src="/public/javascripts/dcmaw/app/init.js"></script>-->
 
 <script type="text/javascript">{{ GAcode | safe }}</script>
 {% endblock %}
