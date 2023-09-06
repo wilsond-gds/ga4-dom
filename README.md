@@ -6,4 +6,6 @@ The relevant clicks are captured and displayed on screen in real time.
 
 ## Starting the prototype
 
-Run `npm run dev` then go to localhost:3000 in your browser.
+Run `npm install` to install the dependencies
+Start the prototye with `npm run dev`  
+To view the pages go to localhost:3000 in your browser.
