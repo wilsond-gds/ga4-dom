@@ -66,10 +66,10 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 {% block pageScripts %}
 <!-- Test code to watch what’s happening in the DOM and delete cookies -->
 <script src="/public/javascripts/ga-ui.js"></script>
-<!-- This script has been completely deleted -->
+<!-- This script has been completely deleted as it’s replaced by the below -->
 <!--<script src="/public/javascripts/dcmaw/cookiesjs/cookies.js"></script>-->
 
-<!--This script replaces all the scripts below-->
+<!--This script is the concatenation of all the scripts below-->
 <script src="/public/javascripts/processed/analytics.js"></script>
 
 <!--<script src="/public/javascripts/dcmaw/analytics/ga4/init.js"></script>-->
@@ -82,6 +82,7 @@ window.DI.appInit({uaContainerId: 'GTM-TK92W68', analyticsCookieDomain: 'localho
 <!--<script src="/public/javascripts/dcmaw/analytics/loadAnalytics.js"></script>-->
 <!--<script src="/public/javascripts/dcmaw/app/init.js"></script>-->
 
+<!-- run the code with environment variables from the Nunjucks -->
 <script type="text/javascript">{{ GAcode | safe }}</script>
 {% endblock %}
 {% endblock %}

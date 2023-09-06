@@ -3,7 +3,7 @@
     "dev": "npm run build-js && govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "build-js": " mkdir -p app/assets/javascripts/processed; uglifyjs --verbose --warn app/assets/javascripts/dcmaw/analytics/**/*.js app/assets/javascripts/dcmaw/analytics/*.js app/assets/javascripts/dcmaw/app/*.js --source-map --output app/assets/javascripts/processed/analytics.js"
+    "build-js": "mkdir -p app/assets/javascripts/processed; uglifyjs --verbose --warn app/assets/javascripts/dcmaw/analytics/**/*.js app/assets/javascripts/dcmaw/analytics/*.js app/assets/javascripts/dcmaw/app/*.js --source-map --output app/assets/javascripts/processed/analytics.js"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "^1.2.1",
